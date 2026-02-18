@@ -1,0 +1,9 @@
+**.pdf
+**.png
+**.root
+**.pyc
+**.log
+
+inputs/jsonpog
+inputs/nanoAODs
+results/
