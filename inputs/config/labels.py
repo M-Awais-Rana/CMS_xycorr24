@@ -20,6 +20,18 @@ def get_labels(year):
 	'2024_Summer24': {
             'DATA': '117.06fb^{-1} (13.6 TeV)',
             'MC': '(13.6 TeV)',
+        },
+	'2024_Summer24-C': {
+            'DATA': '117.06fb^{-1} (13.6 TeV)',
+            'MC': '(13.6 TeV)',
+        },
+	'2024_Summer24-D': {
+            'DATA': '117.06fb^{-1} (13.6 TeV)',
+            'MC': '(13.6 TeV)',
+        },
+	'2024_Summer24-E': {
+            'DATA': '117.06fb^{-1} (13.6 TeV)',
+            'MC': '(13.6 TeV)',
         }
     }
 
@@ -28,7 +40,10 @@ def get_labels(year):
         '2022_Summer22EE': '2022 postEE',
         '2023_Summer23': '2023 preBPix',
         '2023_Summer23BPix': '2023 postBPix',
-	'2024_Summer24': '2024 Summer'
+	'2024_Summer24': '2024 Summer',
+	'2024_Summer24-C': '2024 Summer C',
+	'2024_Summer24-D': '2024 Summer D',
+	'2024_Summer24-E': '2024 Summer E'
     }
 
     axislabels = {
