@@ -19,7 +19,7 @@ else
 fi
 
 if [ ! -d inputs/jsonpog ]; then
-    git clone https://gitlab.cern.ch/cms-analysis-corrections/LUM/Run3-24CDEReprocessingFGHIPrompt-Summer24-NanoAODv15 inputs/jsonpog
+    git clone https://gitlab.cern.ch/cms-analysis-corrections/LUM/Run3-24CDEReprocessingFGHIPrompt-Summer24-NanoAODv15 inputs/jsonpog/POG/LUM
 fi
 
 
