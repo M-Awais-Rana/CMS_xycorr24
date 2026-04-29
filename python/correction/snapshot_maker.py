@@ -147,9 +147,9 @@ def make_snapshot(
 
         logger.info(f"Now processing {dtmc}")
 
-        infiles = files[dtmc]
-	print(f"DEBUG: infiles type = {type(infiles)}, length = {len(infiles)}")
-    	print(f"DEBUG: first file = {infiles[0]}") 
+        infiles = files[dtmc]	
+        print(f"DEBUG: infiles type = {type(infiles)}, length = {len(infiles)}") 	
+        print(f"DEBUG: first file = {infiles[0]}") 
         logger.debug(f"Input file list: {infiles}")
 
         is_data = (dtmc == 'DATA')
@@ -170,14 +170,14 @@ def make_snapshot(
             (f, g_json, pu_json, mets, snap_dir_dtmc, quants, idx, is_data)
             for idx, f in enumerate(infiles)
         ]
-	print(f"DEBUG: number of arguments = {len(arguments)}")
+        print(f"DEBUG: number of arguments = {len(arguments)}")
         nthreads = min(nthreads, len(infiles))
 
-        if condor_no >= 0:
-	    print(f"DEBUG: about to run job_wrapper for condor_no={condor_no}")
+        if condor_no >= 0: 
+            print(f"DEBUG: about to run job_wrapper for condor_no={condor_no}")
             # start single job
             job_wrapper(arguments[condor_no])
-	    print(f"DEBUG: job_wrapper finished")
+            print(f"DEBUG: job_wrapper finished")
         elif nthreads==0:
             # setup condor job script
             condor.setup_job(condor_dir, dtmc, year)
