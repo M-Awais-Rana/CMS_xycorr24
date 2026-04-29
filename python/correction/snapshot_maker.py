@@ -36,13 +36,13 @@ def get_corrections(rdf, is_data, pu_json):
         rdf = rdf.Define("puWeightUp", "1")
         rdf = rdf.Define("puWeightDn", "1")
     else:
-        ROOT.gROOT.ProcessLine(
+        ret = ROOT.gROOT.ProcessLine(
             f"""
             auto cset = correction::CorrectionSet::from_file("{pu_json}");
             auto cs_pu = cset->at("{cname}");
             """
         )
-
+        print(f"DEBUG: ProcessLine return code = {ret}")
         rdf = rdf.Define("puWeight", 
                          'cs_pu->evaluate({Pileup_nTrueInt, "nominal"})')
         rdf = rdf.Define("puWeightUp", 
