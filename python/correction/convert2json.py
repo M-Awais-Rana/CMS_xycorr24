@@ -192,7 +192,7 @@ def make_correction_with_formula(corr_dir, year, datamc, mets):
     path = corr_dir.replace(f'{year}/', f'schemaV2_{year}.json')
 
     with open(path, 'w') as fout:
-        fout.write(cset.json(exclude_unset=True, indent=4))
+        fout.write(cset.model_dump_json(exclude_unset=True, indent=4))
 
     logger.info(f'Saved clib file in {path}')
 
