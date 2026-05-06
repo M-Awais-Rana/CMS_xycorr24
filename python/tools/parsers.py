@@ -36,7 +36,7 @@ def parse_arguments():
     parser.add_argument(
         "--met",
         help="Comma-separated list of MET types; default is 'MET,PuppiMET'",
-        default='MET,PuppiMET,CaloMET,ChsMET,DeepMETResolutionTune,DeepMETResponseTune,RawMET,RawPuppiMET,TkMET'
+        default='PFMET,PuppiMET,CaloMET,ChsMET,DeepMETResolutionTune,DeepMETResponseTune,RawMET,RawPuppiMET,TkMET'
     )
     parser.add_argument(
         "--pileup",
