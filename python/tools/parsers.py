@@ -35,9 +35,10 @@ def parse_arguments():
         )
     parser.add_argument(
         "--met",
-        help="Comma-separated list of MET types; default is 'MET,PuppiMET'",
-        default='PFMET,PuppiMET,CaloMET,ChsMET,DeepMETResolutionTune,DeepMETResponseTune,RawMET,RawPuppiMET,TkMET'
+        help="Comma-separated list of MET types; default depends on year.",
+        default=None  # <-- changed the default value to None so we can set it appropriately for the year
     )
+
     parser.add_argument(
         "--pileup",
         help="Comma-separated list of pileup types; default is 'PV_npvsGood'"\
@@ -101,5 +102,12 @@ def parse_arguments():
     )
 
     args = parser.parse_args()
+    if args.met is None:
+        year = int(args.year[:4])  # extract first 4 characters as integer
+        if year >= 2024:
+            args.met = 'PFMET,PuppiMET,CaloMET,DeepMETResolutionTune,DeepMETResponseTune,RawPuppiMET,TrkMET'
+        else:
+            args.met = 'MET,PuppiMET,CaloMET,ChsMET,DeepMETResolutionTune,DeepMETResponseTune,RawMET,RawPuppiMET,TkMET'
 
+    return args
     return args
