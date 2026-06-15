@@ -18,7 +18,7 @@ def get_labels(year):
             'MC': '(13.6 TeV)',
         },
 	'2024_Summer24': {
-            'DATA': '117.06fb^{-1} (13.6 TeV)',
+            'DATA': '124.04fb^{-1} (13.6 TeV)',
             'MC': '(13.6 TeV)',
         },
 	'2024_Summer24-C': {
