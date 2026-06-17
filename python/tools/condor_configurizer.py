@@ -49,7 +49,7 @@ log = logs/job_$(Cluster)_$(Process).log
 
 # job requirements
 universe = vanilla
-+JobFlavour = "microcentury"
++JobFlavour = "longlunch"
 RequestCPUs = 1
 
 Proxy_path = {proxy_path}

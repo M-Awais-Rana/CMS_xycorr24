@@ -16,7 +16,7 @@ def get_paths(args):
         'plot_dir': f"results/plots/{add_path}/",
         'corr_dir': f"results/corrections/{add_path}/",
         'hist_dir': f"results/hists/{add_path}/",
-        'condor_dir': f"results/condor/{add_path}/",
+        'condor_dir': f"{eos_path}/CMS_xycorr/results/condor/{add_path}/",
         'pu_json': f'inputs/jsonpog/POG/LUM/{args.year}/puWeights.json.gz',
         'snap_dir': f"{eos_path}/CMS_xycorr/snapshots/{add_path}/",
         'proxy_path': f'{home_path}/proxy/x509up_u{uid}'
