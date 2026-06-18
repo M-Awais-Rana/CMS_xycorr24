@@ -43,8 +43,8 @@ def setup_condor_lxplus(njobs, condor_dir, dtmc, proxy_path):
 arguments = $(Process) $(Proxy_path)
 
 # output/error/log files
-output = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/{year}/{dtmc}/job_$(Cluster)_$(Process).out
-error = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/{year}/{dtmc}/job_$(Cluster)_$(Process).err
+output = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/job_$(Cluster)_$(Process).out
+error = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/job_$(Cluster)_$(Process).err
 log = logs/job_$(Cluster).log
 
 # job requirements
