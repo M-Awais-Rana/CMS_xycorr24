@@ -43,9 +43,9 @@ def setup_condor_lxplus(njobs, condor_dir, dtmc, proxy_path):
 arguments = $(Process) $(Proxy_path)
 
 # output/error/log files
-output = logs/job_$(Cluster)_$(Process).out
-error = logs/job_$(Cluster)_$(Process).err
-log = logs/job_$(Cluster)_$(Process).log
+output = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/{year}/{dtmc}/job_$(Cluster)_$(Process).out
+error = root://eosuser.cern.ch//eos/user/m/mrana/CMSxycorr/results/logs/{year}/{dtmc}/job_$(Cluster)_$(Process).err
+log = logs/job_$(Cluster).log
 
 # job requirements
 universe = vanilla
@@ -62,7 +62,7 @@ queue {njobs}"""
     with open(path_submit, 'w') as submit:
         submit.write(submit_script)
 
-    run_script = f"cd {condor_dir}{dtmc}/ && condor_submit submit.sub && cd ../../../../.."
+    run_script = f"cd {condor_dir}{dtmc}/ && condor_submit submit.sub && cd ~"
 
     logger.info(f"Run script for {njobs} via: \n{run_script}")
     return
