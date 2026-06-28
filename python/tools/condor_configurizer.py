@@ -62,7 +62,7 @@ queue {njobs}"""
     with open(path_submit, 'w') as submit:
         submit.write(submit_script)
 
-    run_script = f"cd {condor_dir}{dtmc}/ && condor_submit submit.sub && cd ~"
+    run_script = f"cd {condor_dir}{dtmc}/ && condor_submit submit.sub && cd ../../../../.."
 
     logger.info(f"Run script for {njobs} via: \n{run_script}")
     return
